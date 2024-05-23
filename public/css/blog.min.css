@@ -1,0 +1,229 @@
+.best-sell,
+.top-question {
+    margin-bottom: 20px;
+}
+.top-question ul li {
+    align-items: center;
+    display: flex;
+    padding: 6px 0;
+}
+.top-question ul li span.stt {
+    background: #f4f4f4;
+    color: #cbcbcb;
+    display: inline-block;
+    font-size: 20px;
+    padding: 6px 10px;
+}
+.top-question ul li a {
+    flex: 1;
+    padding-left: 10px;
+    line-height: 22px;
+}
+.best-sell .content .item {
+    display: flex;
+    padding: 10px 0;
+}
+.best-sell .content .item:not(:last-child) {
+    border-bottom: 1px solid #dcdcdc;
+}
+.best-sell .content .item__avatar {
+    margin-right: 10px;
+    border: 1px solid #dcdcdc;
+    width: 80px;
+    height: 100%;
+    display: inherit;
+}
+.best-sell .content .item__info .cate {
+    background: #f2f2f2;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 10px;
+}
+.best-sell .content .item__info .cate.sale {
+    color: red;
+    font-weight: 700;
+}
+.best-sell .content .item__info .name {
+    display: block;
+    margin: 5px 0;
+    font-size: 15px;
+}
+.best-sell .content .item__info .price .new {
+    color: red;
+    font-size: 16px;
+}
+.best-sell .content .item__info .price .old {
+    text-decoration: line-through;
+}
+.blog-top .top {
+    margin-bottom: 15px;
+}
+.blog-top .top__avatar {
+    margin-bottom: 5px;
+    width: 100%;
+    height: 160px;
+}
+.blog-top .top__title {
+    display: block;
+    font-size: 20px;
+    line-height: 32px;
+}
+.blog-top .bot {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -10px;
+}
+.blog-top .bot .item {
+    width: 50%;
+    padding: 10px;
+}
+.blog-top .bot .item a {
+    height: 120px;
+    display: inline-block;
+}
+@media (max-width: 767px) {
+    .blog-top .top {
+        margin-bottom: 5px;
+    }
+}
+.blog-main {
+    background-color: #fff;
+    display: flex;
+    padding: 15px;
+}
+.blog-main .left {
+    width: 70%;
+    padding-right: 20px;
+}
+.blog-main .right {
+    flex: 1;
+}
+.blog-main .right .title {
+    border-bottom: 1px solid #eee;
+    color: #888;
+    display: block;
+    font-size: 18px;
+    line-height: 26px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.blog-main .post-detail_suggest h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.blog-main .post-detail_suggest ul li a {
+    display: inline-block;
+    padding: 5px 0;
+}
+.blog-main .post-detail_suggest ul li a span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f4f4f4;
+    display: inline-block;
+    text-align: center;
+}
+@media (max-width: 767px) {
+    .blog-main {
+        padding: 10px;
+        flex-direction: column;
+    }
+    .blog-main .left {
+        width: 100%;
+        padding-right: 0;
+    }
+}
+.post-hot {
+    display: flex;
+    margin-bottom: 30px;
+}
+.post-hot .hot-left {
+    width: 460px;
+}
+.post-hot .hot-left .avatar {
+    width: 460px;
+    height: 260px;
+}
+.post-hot .hot-left .title {
+    display: block;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 10px 0;
+}
+.post-hot .hot-left .intro-short {
+    line-height: 22px;
+}
+.post-hot .hot-right {
+    flex: 1;
+    padding: 10px;
+    background: #f2f2f2;
+}
+.post-hot .hot-right .top {
+    border-bottom: 1px solid #ddd;
+}
+.post-hot .hot-right .top .avatar {
+    margin-bottom: 5px;
+    width: 100%;
+    height: 160px;
+}
+.post-hot .hot-right .top .title {
+    display: block;
+    font-size: 20px;
+    line-height: 32px;
+}
+.post-hot .hot-right .bot a {
+    display: block;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 7px 0;
+}
+.post-hot .hot-right .bot a:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+@media (max-width: 767px) {
+    .post-hot {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    .post-hot .hot-left {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .post-hot .hot-left .avatar {
+        width: 100%;
+    }
+}
+.post-list .blog-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+.post-list .blog-item .avatar {
+    height: 140px;
+    width: 250px;
+    padding-right: 15px;
+}
+.post-list .blog-item .info {
+    flex: 1;
+}
+.post-list .blog-item .info > a {
+    display: block;
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 7px;
+}
+.post-list .blog-item .info > p {
+    line-height: 24px;
+}
+@media (max-width: 767px) {
+    .post-list .blog-item {
+        flex-direction: column;
+    }
+    .post-list .blog-item .avatar {
+        height: 150px;
+        margin-bottom: 10px;
+        width: 100%;
+        padding-right: 0;
+    }
+}
