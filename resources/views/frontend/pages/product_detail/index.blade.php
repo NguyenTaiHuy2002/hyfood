@@ -54,14 +54,18 @@
                                     <span>View :&nbsp</span>
                                     <span>{{ $product->pro_view }}</span>
                                 </p>
-                                    <p>
-                                        <span>Trạng thái :&nbsp</span>
-                                        @if ($product->pro_number > 0)
-                                            <span>Còn hàng</span>
-                                        @else
-                                            <span>Hết hàng</span>
-                                        @endif
-                                    </p>
+                                <p>
+                                    <span>Lượt mua :&nbsp</span>
+                                    <span>{{ $product->pro_pay }}</span>
+                                </p>
+                                <p>
+                                    <span>Trạng thái :&nbsp</span>
+                                    @if ($product->pro_number > 0)
+                                        <span>Còn hàng</span>
+                                    @else
+                                        <span>Hết hàng</span>
+                                    @endif
+                                </p>
                             </div>
                             {{--@if($product->attributes->count() > 0)--}}
                                 {{--<div>--}}
@@ -117,34 +121,6 @@
                                     <span>Yêu thích</span>
                                 </a>
                             </div>
-                            <!-- <div class="infomation">
-                                <h2 class="infomation__title">Nguồn gốc sản phẩm</h2>
-                                <div class="infomation__group">
-
-                                    <div class="item">
-                                        <p class="text1">Danh mục:</p>
-                                        <h3 class="text2">
-                                            @if (isset($product->category->c_name))
-                                                <a href="{{  route('get.category.list', $product->category->c_slug) . '-' . $product->pro_category_id }}">{{ $product->category->c_name }}</a>
-                                            @else
-                                                "[N\A]"
-                                            @endif
-                                        </h3>
-                                    </div>
-                                    <div class="item">
-                                        <p class="text1">Xuất sứ :</p>
-                                        <h3 class="text2">{{ isset($product->producer) && !empty($product->producer) ? $product->producer->pdr_name : ''  }}</h3>
-                                    </div>
-                                    <div class="item">
-                                        <p class="text1">Email liên hệ :</p>
-                                        <h3 class="text2">{{ isset($product->producer) && !empty($product->producer) ? $product->producer->pdr_email : ''  }}</h3>
-                                    </div>
-                                    <div class="item">
-                                        <p class="text1">Phone :</p>
-                                        <h3 class="text2">{{ isset($product->producer) && !empty($product->producer) ? $product->producer->pdr_phone : ''  }}</h3>
-                                    </div>
-                                </div>
-                            </div> -->
 
                         </div>
                         @if ($event1)

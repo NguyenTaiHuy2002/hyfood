@@ -56,9 +56,9 @@
 }
 .cart .left .list__content .qty_number .btn-action-delete {
     font-size: 25px;
-    border: 1px solid #888;
-    background: #888;
-    color: #fff;
+    /* border: 1px solid #888;
+    background: #888; */
+    color: #f51f1f;
     display: inline-block;
     margin-left: 10px;
     align-items: center;

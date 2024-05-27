@@ -6831,7 +6831,7 @@
                     fixTopMenu: function () {
                         t(document).on("scroll", function () {
                             var e = t(".commonTop");
-                            t(window).scrollTop() >= 40
+                            t(window).scrollTop() >= 110
                                 ? (console.log("fix Top"),
                                   e.hasClass("fix-top") ||
                                       e.addClass("fix-top"))

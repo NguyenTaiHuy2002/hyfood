@@ -38,13 +38,14 @@
                             <tbody>
                                 <tr>
                                     <th style="width: 10px">id</th>
-                                    <th style="width: 196px">Tên</th>
+                                    <th style="width: 164px">Tên</th>
                                     <th>Danh mục</th>
                                     <th>Số lượng</th>
                                     <th>Ảnh</th>
                                     <th>Giá</th>
                                     <th>Hot</th>
                                     <th>Trạng thái</th>
+                                    <th>Lượt mua</th>
                                     <th>Ngày tạo</th>
                                     <th>Hành động</th>
                                 </tr>
@@ -60,7 +61,7 @@
                                             </td>
                                             <td>{{ $product->pro_number }}</td>
                                             <td>
-                                                <img src="{{ asset(pare_url_file($product->pro_avatar)) }}" style="width: 80px;height: 100px">
+                                                <img src="{{ asset(pare_url_file($product->pro_avatar)) }}" style="width: 80px;height: 70px">
                                             </td>
                                             <td>
                                                 @if ($product->pro_sale)
@@ -88,6 +89,7 @@
                                                     <a href="{{ route('admin.product.active', $product->id) }}" class="label label-default">Hide</a>
                                                 @endif
                                             </td>
+                                            <td>{{ $product->pro_pay }}</td>
                                             <td>{{  $product->created_at }}</td>
                                             <td>
                                                 <a href="{{ route('admin.product.update', $product->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
@@ -101,9 +103,21 @@
                 </div>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer">
-                    {!! $products->appends($query)->links() !!}
-                </div>
+                <ul class="pagination">
+                    <li class="{{ $products->currentPage() == 1 ? 'disabled' : '' }}">
+                        <a href="{{ $products->previousPageUrl() }}" {!! $products->currentPage() == 1 ? 'disabled' : '' !!}>&lt;&lt;</a>
+                    </li>
+
+                    @for ($i = 1; $i <= $products->lastPage(); $i++)
+                        <li class="{{ $i == $products->currentPage() ? 'active' : '' }}">
+                            <a href="{{ $products->url($i) }}">{{ $i }}</a>
+                        </li>
+                    @endfor
+
+                    <li class="{{ $products->currentPage() == $products->lastPage() ? 'disabled' : '' }}">
+                        <a href="{{ $products->nextPageUrl() }}" {!! $products->currentPage() == $products->lastPage() ? 'disabled' : '' !!}>&gt;&gt;</a>
+                    </li>
+                </ul>
                 <!-- /.box-footer-->
             </div>
             <!-- /.box -->

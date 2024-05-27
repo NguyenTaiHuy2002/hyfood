@@ -47,3 +47,7 @@
     </div>
 </div>
 @endsection
+<script type="text/javascript">
+    <?php $js = file_get_contents('js/home.js');
+echo $js;?>
+    </script>

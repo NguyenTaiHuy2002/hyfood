@@ -22,50 +22,55 @@
         <div class="header clearfix">
             <h3 class="text-muted">Thông tin đơn hàng</h3>
         </div>
-        <div class="table-responsive">
-            <div class="form-group">
-                <label>Mã đơn hàng: {{ $vnpayData['vnp_TxnRef'] }}</label>
-                <label></label>
-            </div>
-            <div class="form-group">
-                <label>Số tiền:</label>
-                <label> {{ number_format($vnpayData['vnp_Amount'] / 100, 0, ',', '.') }} VNĐ</label>
-            </div>
-            <div class="form-group">
-                <label>Nội dung thanh toán: {{ $vnpayData['vnp_OrderInfo'] }}</label>
-                <label></label>
-            </div>
-            <div class="form-group">
-                <label>Mã phản hồi (vnp_ResponseCode): {{ $vnpayData['vnp_ResponseCode'] }}</label>
-                <label></label>
-            </div>
-            <div class="form-group">
-                <label>Mã GD Tại VNPAY: {{ $vnpayData['vnp_TransactionNo'] }}</label>
-                <label></label>
-            </div>
-            <div class="form-group">
-                <label>Mã Ngân hàng: {{ $vnpayData['vnp_BankCode'] }}</label>
-                <label></label>
-            </div>
-            <div class="form-group">
-                <label>Thời gian thanh toán: {{ date('Y-m-d H:i', strtotime($vnpayData['vnp_PayDate'])) }}</label>
-                <label></label>
-            </div>
-            <div class="form-group">
-                <label>Kết quả: GD Thanh cong</label>
-                <label>
-                </label>
-                <br>
-                <a href="{{ route('get.home') }}">
-                    <button>Quay lại</button>
-                </a>
-            </div>
-        </div>
+        <table class="table-responsive" styles="border: 1px solid">
+            <tr class="form-group">
+                <td class="transaction-info-item">Mã đơn hàng:</td>
+                <td class="transaction-info-item">{{ $vnpayData['vnp_TxnRef'] }}</td>
+            </tr>
+            <tr class="form-group">
+                <td class="transaction-info-item">Số tiền:</td>
+                <td class="transaction-info-item">{{ number_format($vnpayData['vnp_Amount'] / 100, 0, ',', '.') }} VNĐ
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td class="transaction-info-item">Nội dung thanh toán:</td>
+                <td class="transaction-info-item">{{ $vnpayData['vnp_OrderInfo'] }}</td>
+            </tr>
+            <tr class="form-group">
+                <td class="transaction-info-item">Mã phản hồi (vnp_ResponseCode):</td>
+                <td class="transaction-info-item">{{ $vnpayData['vnp_ResponseCode'] }}</td>
+            </tr>
+            <tr class="form-group">
+                <td class="transaction-info-item">Mã GD Tại VNPAY:</td>
+                <td class="transaction-info-item">{{ $vnpayData['vnp_TransactionNo'] }}</td>
+            </tr>
+            <tr class="form-group">
+                <td class="transaction-info-item">Mã Ngân hàng:</td>
+                <td class="transaction-info-item">{{ $vnpayData['vnp_BankCode'] }}</td>
+            </tr>
+            <tr class="form-group">
+                <td class="transaction-info-item">Thời gian thanh toán:</td>
+                <td class="transaction-info-item">{{ date('Y-m-d H:i', strtotime($vnpayData['vnp_PayDate'])) }}</td>
+            </tr>
+            <tr class="form-group">
+                <td class="transaction-info-item">Kết quả:</td>
+                <td class="transaction-info-item">GD Thanh công</td>
+            </tr>
+            <tr colspan="2">
+
+            </tr>
+        </table>
+        <p>
+            &nbsp;
+        </p>
+        <a href="{{ route('get.home') }}">
+            <button>Quay lại</button>
+        </a>
         <p>
             &nbsp;
         </p>
         <footer class="footer">
-            <p>&copy; Quản lý Tiếng Anh 2020</p>
+            <p>&copy; Ví điện tử VNPAY</p>
         </footer>
     </div>
 </body>

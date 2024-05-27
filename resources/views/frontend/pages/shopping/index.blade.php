@@ -104,7 +104,8 @@
                         <button class="buy1 btn btn-purple {{ \Auth::id() ? '' : 'js-show-login' }}" type="submit">
                             Thanh toán khi nhận hàng
                         </button>
-                        <button class="btn btn-purple" name="payment" value="2" type="submit">
+                        <button class="btn btn-purple {{ \Auth::id() ? '' : 'js-show-login' }}" name="payment" value="2"
+                            type="submit">
                             <span class="">Thanh toán qua VNPAY</span>
                         </button>
                     </div>

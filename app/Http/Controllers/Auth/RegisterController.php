@@ -53,18 +53,18 @@ class RegisterController extends Controller
 
     public function postRegister(RequestRegister $request)
     {
-        $data               = $request->except("_token");
-        $data['password']   =  Hash::make($data['password']);
+        $data = $request->except("_token");
+        $data['password'] = Hash::make($data['password']);
         $data['created_at'] = Carbon::now();
         $id = User::insertGetId($data);
 
         if ($id) {
             \Session::flash('toastr', [
-                'type'    => 'success',
+                'type' => 'success',
                 'message' => 'Đăng ký thành công'
             ]);
             // Mail::to($request->email)->send(new RegisterSuccess($request->name));
-            if (\Auth::attempt(['email' => $request->email,'password' => $request->password])) {
+            if (\Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
                 return redirect()->intended('/');
             }
             return redirect()->route('get.login');

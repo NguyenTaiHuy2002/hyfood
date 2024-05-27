@@ -186,6 +186,7 @@ a:focus {
     -webkit-transition: margin-left 0.3s ease-in-out;
     -o-transition: margin-left 0.3s ease-in-out;
     transition: margin-left 0.3s ease-in-out;
+    background-color: #2f2fa5;
     margin-bottom: 0;
     margin-left: 230px;
     border: none;
@@ -275,6 +276,7 @@ a:focus {
     -webkit-transition: width 0.3s ease-in-out;
     -o-transition: width 0.3s ease-in-out;
     transition: width 0.3s ease-in-out;
+    background-color: #2f2fa5;
     display: block;
     float: left;
     height: 50px;
@@ -398,6 +400,7 @@ a:focus {
 }
 .main-sidebar {
     position: absolute;
+    background-color: #081a44;
     top: 0;
     left: 0;
     padding-top: 50px;
@@ -2120,7 +2123,7 @@ a:focus {
     border-top-right-radius: 0;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
-    padding: 10px;
+    margin-top: 10px;
 }
 .no-header .box-body {
     border-top-right-radius: 3px;

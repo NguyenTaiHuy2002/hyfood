@@ -58,9 +58,21 @@
                         @include('frontend.components.product_item', ['product' => $product])
                     @endforeach
                 </div>
-                <div style="display: block;">
-                    {!! $products->appends($query ?? [])->links() !!}
-                </div>
+                <ul class="pagination">
+                    <li class="{{ $products->currentPage() == 1 ? 'disabled' : '' }}">
+                        <a href="{{ $products->previousPageUrl() }}" {!! $products->currentPage() == 1 ? 'disabled' : '' !!}>&lt;&lt;</a>
+                    </li>
+
+                    @for ($i = 1; $i <= $products->lastPage(); $i++)
+                        <li class="{{ $i == $products->currentPage() ? 'active' : '' }}">
+                            <a href="{{ $products->url($i) }}">{{ $i }}</a>
+                        </li>
+                    @endfor
+
+                    <li class="{{ $products->currentPage() == $products->lastPage() ? 'disabled' : '' }}">
+                        <a href="{{ $products->nextPageUrl() }}" {!! $products->currentPage() == $products->lastPage() ? 'disabled' : '' !!}>&gt;&gt;</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

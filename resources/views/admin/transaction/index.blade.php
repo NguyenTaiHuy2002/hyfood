@@ -48,7 +48,7 @@
                             <tr>
                                 <th style="width: 10px">ID</th>
                                 <th style="width: 10px">Mã đơn hàng</th>
-                                <th style="width: 40px">Thông tin</th>
+                                <th style="width: 168px">Thông tin</th>
                                 <th>Tổng tiền</th>
                                 <th>Vai trò</th>
                                 <th>Phương thức thanh toán</th>
@@ -62,7 +62,7 @@
                                         <td>{{ $transaction->id }}</td>
                                         <td>{{ $transaction->tst_code }}</td>
                                         <td>
-                                            <ul style="list-style: none; padding: 0" >
+                                            <ul style="list-style: none; padding: 0">
                                                 <li>Name: {{ $transaction->tst_name }}</li>
                                                 <li>Email: {{ $transaction->tst_email }}</li>
                                                 <li>Phone: {{ $transaction->tst_phone }}</li>
@@ -81,14 +81,13 @@
                                             @if ($transaction->payments)
                                                 <ul style="list-style: none; padding: 0">
                                                     <li>Ngân hàng:
-                                                        {{ $transaction->payments ? $transaction->payments->p_code_bank : ''}}</li>
+                                                        {{ $transaction->payments ? $transaction->payments->p_code_bank : ''}}
+                                                    </li>
                                                     <li>Mã thanh toán: {{ $transaction->payments->p_code_vnpay }}</li>
                                                     <li>Tổng tiền:
                                                         {{ number_format($transaction->payments->p_money, 0, ',', '.') }} VNĐ
                                                     </li>
                                                     <li>Nội dung: {{ $transaction->payments->p_note }}</li>
-                                                    <!-- <li>Thời gian:
-                                                        {{ date('Y-m-d H:i', strtotime($transaction->payments->p_time)) }}</li> -->
                                                 </ul>
                                             @else
                                                 Thanh toán khi nhận hàng
@@ -102,9 +101,9 @@
                                         </td>
                                         @if ($transaction->payments){
                                             <td>{{  $transaction->payments->p_time }}</td>
-                                        }
+                                            }
                                         @else
-                                        <td>{{  $transaction->created_at }}</td>
+                                            <td>{{  $transaction->created_at }}</td>
                                         @endif
 
                                         <td>
@@ -123,7 +122,8 @@
                                                 <ul class="dropdown-menu" role="menu">
                                                     <li>
                                                         <a href="{{  route('admin.transaction.delete', $transaction->id) }}"
-                                                            class="js-delete-confirm"><i class="fa fa-trash"></i> Xóa đơn hàng</a>
+                                                            class="js-delete-confirm"><i class="fa fa-trash"></i> Xóa đơn
+                                                            hàng</a>
                                                     </li>
                                                     <li class="divider"></li>
                                                     <li>
